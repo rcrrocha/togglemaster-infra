@@ -1,1 +1,3 @@
-# Backend remoto do Terraform
+provider "aws" {
+  region = var.aws_region
+}
