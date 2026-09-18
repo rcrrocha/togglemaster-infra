@@ -240,3 +240,25 @@ resource "aws_ecr_repository" "analytics" {
   }
 
 }
+resource "aws_dynamodb_table" "analytics" {
+  name         = "ToggleMasterAnalytics"
+  billing_mode = "PAY_PER_REQUEST"
+
+  hash_key = "eventId"
+
+  attribute {
+    name = "eventId"
+    type = "S"
+  }
+
+  tags = {
+    Name = "ToggleMasterAnalytics"
+  }
+}
+resource "aws_sqs_queue" "events" {
+  name = "togglemaster-events"
+
+  tags = {
+    Name = "togglemaster-events"
+  }
+}
