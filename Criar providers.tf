@@ -1,1 +1,0 @@
-# Configuracao do provider AWS
