@@ -262,3 +262,4 @@ resource "aws_sqs_queue" "events" {
     Name = "togglemaster-events"
   }
 }
+
